@@ -3,21 +3,22 @@
      //  test file
 	 
 	  require_once("./src/FtpClass.php");
-	  $ftp = new Ftp('eng');
+	  $ftp = new Ftp();
 	  $ftp->connect("127.0.0.1",21,90,false);
 	  $ftp->login("user","123");
 
-	 /* //$list = $ftp->putInfoInListFiles();
-	  echo $ftp->getCurrentDir().'<br/>';
+	 //$list = $ftp->putInfoFilesInList('/folder1');
+	 
+	 //echo $ftp->getCurrentDir().'<br/>';
 
-	   $ftp->changeCurrentFolder('folder');
+	  // $ftp->changeCurrentFolder('folder');
 	   //$list = $ftp->putInfoInListFiles(); var_dump($list);
-	 	 echo $ftp->getCurrentDir().'<br/>';
+	 	// echo $ftp->getCurrentDir().'<br/>';
 
-	 $ftp->goTofolerHome();
-      echo $ftp->getCurrentDir();**/
+	 /*$ftp->goTofolerHome();
+      echo $ftp->getCurrentDir();*/
 	  
-	 //echo  $ftp->downloadFileByFTP('Classeur1.xlsx');
+	  $ftp->changeCurrentFolder('/folder1'); echo  $ftp->downloadFileByFTP('/folder1/f.jfif');
 	 //echo  $ftp->uploadFileByFTP('Classeur1.xlsx', base64_encode(file_get_contents('Classeur1.xlsx')));
 	 
 	// echo $ftp->getFileSize('Classeur1.xlsx','');
